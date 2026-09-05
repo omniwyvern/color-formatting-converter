@@ -1,0 +1,168 @@
+/* converter.css
+    Styling borrows the settings/dev window styling from
+    Green and Blue, a game in another one of my repositories at
+    omniwyvern.github.io/green-and-blue
+*/
+
+:root,
+:root[data-theme="dark"] {
+    --bg: #14171c;
+    --panel: #1d232b;
+    --panel-light: #2d3948;
+    --border: #333c47;
+    --text: #e8ecef;
+    --text-dim: #b5b5b5;
+    --accent: #4a90d9;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="light"] {
+    --bg: #f2f4f7;
+    --panel: #ffffff;
+    --panel-light: #e8ecf1;
+    --border: #979797;
+    --text: #1b2027;
+    --text-dim: #888c90;
+    --accent: #2f6fb5;
+    --shadow: rgba(15, 25, 40, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html {
+    font-size: clamp(16px, 0.45vw + 0.4vh + 7.5px, 24px);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "SF Mono", Menlo,
+        Consolas, "Liberation Mono", monospace;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    padding: 1.25rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.page {
+    max-width: 56rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.converter {
+    width: min(100%, 36rem);
+    min-width: 0;
+}
+
+.side {
+    width: min(100%, 13rem);
+}
+
+.settings-window {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.75rem 2.5rem var(--shadow);
+    padding: 1.125rem 1.25rem 1.25rem;
+    color: var(--text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.08rem;
+    
+}
+.settings-header h2 { margin: 0; font-size: 1.125rem; }
+
+.settings-section { margin-bottom: 1rem; }
+.settings-label { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 0.375rem; }
+.settings-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.settings-button-secondary {
+    background: var(--panel-light);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-family: inherit;
+    transition: border-color 0.15s ease;
+}
+.settings-button-secondary:hover { border-color: var(--accent); }
+
+.settings-status { font-size: 0.75rem; color: var(--text-dim); min-height: 1rem; }
+
+
+.converter-window { width: 100%; }
+
+.converter-textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 9rem;
+    resize: vertical;
+    background: var(--panel-light);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.625rem;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    transition: border-color 0.15s ease, background 0.2s ease;
+}
+.converter-textarea:focus { outline: none; border-color: var(--accent); }
+.converter-textarea[readonly] { color: var(--text); }
+
+.output-wrap { position: relative; }
+.output-wrap textarea { padding-right: 3.75rem; }
+
+#copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.375rem var(--shadow);
+    cursor: pointer;
+    font-family: inherit;
+    transition: filter 0.15s ease, box-shadow 0.15s ease;
+}
+#copy:hover { filter: brightness(1.15); box-shadow: 0 0.25rem 0.625rem var(--shadow); }
+#copy:active { filter: brightness(0.92); }
+
+.converter-actions {
+    margin-bottom: 0.75rem;
+}
+.converter-actions .settings-status {
+    min-height: 1rem;
+}
+
+.kofi-corner {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 1000;
+    line-height: 0;
+}
+.kofi-corner img {
+    display: block;
+    height: 56px;
+    width: auto;
+    box-shadow: 0 0.25rem 0.75rem var(--shadow);
+    border-radius: 0.25rem;
+}
+

@@ -1,0 +1,62 @@
+<!-- converter.html
+    description here
+    Decent amount of stuff taken from the game I'm developing
+    in another github repository, so that's why some naming
+    conventions are a bit weird.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String converter</title>
+<link rel="icon" type="image/svg+xml" href="../assets/omniwyvern-icon.svg">
+<link rel="stylesheet" href="converter.css?v=10">
+</head>
+<body>
+
+    <div class="page">
+        <main class="converter">
+            <div class="settings-window converter-window">
+                <div class="settings-header">
+                    <h2>Color Format Converter</h2>
+                    <button id="theme-toggle" class="settings-button-secondary" type="button">Light</button>
+                </div>
+
+                <div class="settings-label">This doesn't use any AI</div>
+                
+                <br>
+                <div class="settings-section">
+                    <div class="settings-label">Input</div>
+                    <textarea id="input" class="converter-textarea" spellcheck="false"
+                        autocomplete="off" placeholder="Paste a string with {col:RRGGBB}...{/col} tags here..."></textarea>
+                </div>
+                <br>
+                <div class="settings-section">
+                    <div class="settings-label">Output</div>
+                    <div class="output-wrap">
+                        <textarea id="output" class="converter-textarea" readonly
+                            placeholder="Converted string appears here..."></textarea>
+                        <button id="copy" class="settings-button-secondary" type="button">Copy</button>
+                    </div>
+                </div>
+
+                <div class="converter-actions">
+                    <div class="settings-status" id="status"></div>
+                </div>
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+    <script src="converter.js"></script>
+
+    <a class="kofi-corner" href="https://ko-fi.com/T6K7262MSM" target="_blank" rel="noopener">
+        <img height="56" style="border:0px;height:56px;width:auto;" src="https://storage.ko-fi.com/cdn/kofi5.png?v=6" border="0" alt="Buy Me a Coffee at ko-fi.com" />
+    </a>
+</body>
+</html>
